@@ -7,6 +7,10 @@ export default {
         "logo-cica": "url('../src/imgs/cropped-cica.png')",
       },
 
+      fontFamily: {
+        poppins: "'Poppins', sans-serif",
+      },
+
       screens: {
         "350px": "350px",
         "370px": "370px",
