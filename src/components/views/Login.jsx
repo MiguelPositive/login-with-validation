@@ -7,8 +7,14 @@ import { users } from "../data/data";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const { handleChangeUser, handleChangePassword, showValues, user, password } =
-    useContext(store);
+  const {
+    handleChangeUser,
+    handleChangePassword,
+    showValues,
+    user,
+    password,
+    setIsAdmin,
+  } = useContext(store);
 
   const navigate = useNavigate();
 
@@ -19,9 +25,10 @@ const Login = () => {
 
     console.log(userFiltered);
 
-    if (userFiltered.role === "admin") {
+    if (userFiltered.role == "admin") {
       console.log("es un administrador");
       navigate("/admin");
+      setIsAdmin(true);
     } else {
       console.log("es un usuario normal");
       navigate("/normaluser");

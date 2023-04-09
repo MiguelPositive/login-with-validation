@@ -1,12 +1,12 @@
 import React from "react";
 import { createContext, useState } from "react";
-import { users } from "../data/data";
 
 export const store = createContext();
 
 const ContextApp = (props) => {
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
+  const [isAdmin, setIsAdmin] = useState(false);
 
   const handleChangeUser = (e) => {
     setUser(e.target.value);
@@ -30,6 +30,8 @@ const ContextApp = (props) => {
         showValues,
         user,
         password,
+        isAdmin,
+        setIsAdmin,
       }}
     >
       {props.children}
